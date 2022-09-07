@@ -1,0 +1,8 @@
+type Mutation {
+    createAuthor(author: CreateAuthorRequest!): Author
+}
+
+input CreateAuthorRequest {
+    name: String!
+    email: String!
+}

@@ -1,0 +1,16 @@
+{
+  "data": {
+    "authorById": {
+      "id": "b8addf5e-43f8-4165-9a5f-ab73094a5b1e",
+      "name": "peter",
+      "email": "peteer@gmail.com",
+      "posts": [
+        {
+          "id": "8144f608-3e87-47ea-ad16-677d5679b445",
+          "title": "post title",
+          "content": "post content"
+        }
+      ]
+    }
+  }
+}

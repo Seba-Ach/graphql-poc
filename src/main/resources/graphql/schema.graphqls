@@ -1,0 +1,31 @@
+type Query {
+    helloWorld: String!
+    greetingMessage(firstName: String!, secondName: String): String!
+    author(name: String!): Author
+    recentPosts(page: Int!, count: Int!): [Post]
+    authorById(id: ID!): Author
+}
+
+type Name{
+    firstName: String!
+    secondName: String!
+}
+
+type Author{
+    id: ID
+    name: String!
+    email: String!
+    posts: [Post]
+    postsCount: Int
+}
+
+type Post{
+    id: ID
+    title: String
+    content: String
+}
+
+type Comment {
+    id: ID!
+    text: String!
+}

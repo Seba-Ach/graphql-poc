@@ -1,0 +1,12 @@
+query{
+    author(name: "yiannis"){
+        id,
+        name,
+        email,
+        posts{
+            id,
+            title,
+            content
+        }
+    }
+}

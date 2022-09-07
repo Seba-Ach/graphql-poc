@@ -1,0 +1,16 @@
+{
+  "data": {
+    "author": {
+      "id": "bffc75ba-c8e0-4178-93c9-20eb6cafed75",
+      "name": "yiannis",
+      "email": "yiannis@gmail.com",
+      "posts": [
+        {
+          "id": "883b8a41-831f-4a1a-86ca-d26adc8f84aa",
+          "title": "spring boot",
+          "content": "spring boot and graphQl"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+
+/* get all authors and his posts whose name is peter */
+query{
+  author(name: "peter") {
+    id
+    name
+    email
+    posts {
+      title
+      content
+    }
+  }
+}
+
+/* get X amount of recent posts (with Pagination) */
+query{
+  recentPosts(page: 0, count: 3) {
+    id
+    title
+    content
+  }
+}
