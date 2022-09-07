@@ -1,8 +1,8 @@
-package com.poc.graphql.resolver.authorResolvers;
+package com.poc.graphql.resolver.author;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.poc.graphql.dto.AuthorDto;
-import com.poc.graphql.dto.CreateAuthorRequest;
+import com.poc.graphql.dto.request.CreateAuthorRequest;
 import com.poc.graphql.mapper.AuthorMapper;
 import com.poc.graphql.service.AuthorService;
 import org.springframework.stereotype.Component;

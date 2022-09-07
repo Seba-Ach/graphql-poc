@@ -1,0 +1,10 @@
+mutation{
+    createPost(post: {
+        title: "post title1",
+        content: "some content for you to waste your time while coding",
+        author_Id: "023946ee-6173-4d49-8bac-c0b9e4a7ba88"
+    }){
+        title,
+        content
+    }
+}

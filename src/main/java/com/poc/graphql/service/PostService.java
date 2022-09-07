@@ -1,6 +1,8 @@
 package com.poc.graphql.service;
 
 import com.poc.graphql.dto.PostDto;
+import com.poc.graphql.dto.request.CreatePostRequest;
+import com.poc.graphql.entity.Author;
 import com.poc.graphql.entity.Post;
 import com.poc.graphql.mapper.PostMapper;
 import com.poc.graphql.repository.PostRepository;
@@ -10,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -17,9 +20,11 @@ import java.util.stream.Collectors;
 public class PostService {
 
     private final PostRepository postRepository;
+    private final AuthorService authorService;
 
-    public PostService(PostRepository postRepository) {
+    public PostService(PostRepository postRepository, AuthorService authorService) {
         this.postRepository = postRepository;
+        this.authorService = authorService;
     }
 
     public List<PostDto> getAllPostOfAuthor(UUID authorId) {
@@ -30,5 +35,21 @@ public class PostService {
         Pageable pageable = PageRequest.of(page, count);
         Page<Post> pagePosts = postRepository.findAll(pageable);
         return pagePosts.stream().map(PostMapper::fromPost).collect(Collectors.toList());
+    }
+
+    public PostDto createPost(CreatePostRequest createPostRequest) {
+        Optional<Author> authorById = authorService.getAuthorById(createPostRequest.getAuthor_Id());
+
+        if(!authorById.isPresent()){
+            throw new IllegalArgumentException();
+        }
+
+        Post post = Post.newBuilder()
+                .withTitle(createPostRequest.getTitle())
+                .withContent(createPostRequest.getContent())
+                .withAuthor(authorById.get())
+                .build();
+
+        return PostMapper.fromPost(postRepository.save(post));
     }
 }

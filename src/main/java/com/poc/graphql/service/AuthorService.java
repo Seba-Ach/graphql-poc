@@ -1,7 +1,7 @@
 package com.poc.graphql.service;
 
 import com.poc.graphql.dto.AuthorDto;
-import com.poc.graphql.dto.CreateAuthorRequest;
+import com.poc.graphql.dto.request.CreateAuthorRequest;
 import com.poc.graphql.entity.Author;
 import com.poc.graphql.mapper.AuthorMapper;
 import com.poc.graphql.repository.AuthorRepository;

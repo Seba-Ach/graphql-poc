@@ -1,4 +1,4 @@
-package com.poc.graphql.resolver;
+package com.poc.graphql.resolver.post;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.poc.graphql.dto.PostDto;

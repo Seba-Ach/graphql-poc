@@ -63,4 +63,40 @@ public class Post {
         this.author = author;
     }
 
+    public static Builder newBuilder(){
+        return new Builder(UUID.randomUUID());
+    }
+
+    public static class Builder{
+
+        private UUID id;
+        private String title;
+        private String content;
+        private Author author;
+
+        public Builder(UUID id) {
+            this.id = id;
+        }
+
+        public Builder withTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Builder withContent(String content) {
+            this.content = content;
+            return this;
+        }
+
+        public Builder withAuthor(Author author) {
+            this.author = author;
+            return this;
+        }
+
+        public Post build(){
+            return new Post(id, title, content, author);
+        }
+
+    }
+
 }

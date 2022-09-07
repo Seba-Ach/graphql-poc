@@ -1,8 +1,15 @@
 type Mutation {
     createAuthor(author: CreateAuthorRequest!): Author
+    createPost(post: CreatePostRequest!): Post
 }
 
 input CreateAuthorRequest {
     name: String!
     email: String!
+}
+
+input CreatePostRequest {
+    title: String
+    content: String
+    author_Id: ID!
 }

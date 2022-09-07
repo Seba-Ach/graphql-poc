@@ -1,4 +1,4 @@
-package com.poc.graphql.dto;
+package com.poc.graphql.dto.request;
 
 public class CreateAuthorRequest {
 

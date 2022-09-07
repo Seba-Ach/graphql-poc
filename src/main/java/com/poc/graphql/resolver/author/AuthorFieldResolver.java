@@ -1,4 +1,4 @@
-package com.poc.graphql.resolver.authorResolvers;
+package com.poc.graphql.resolver.author;
 
 import com.coxautodev.graphql.tools.GraphQLResolver;
 import com.poc.graphql.dto.AuthorDto;
