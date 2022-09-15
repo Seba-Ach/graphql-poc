@@ -1,9 +1,11 @@
 package com.poc.graphql.service;
 
+import com.poc.graphql.dto.AuthorDto;
 import com.poc.graphql.dto.PostDto;
 import com.poc.graphql.dto.request.CreatePostRequest;
 import com.poc.graphql.entity.Author;
 import com.poc.graphql.entity.Post;
+import com.poc.graphql.mapper.AuthorMapper;
 import com.poc.graphql.mapper.PostMapper;
 import com.poc.graphql.repository.PostRepository;
 import org.springframework.data.domain.Page;
@@ -38,16 +40,12 @@ public class PostService {
     }
 
     public PostDto createPost(CreatePostRequest createPostRequest) {
-        Optional<Author> authorById = authorService.getAuthorById(createPostRequest.getAuthor_Id());
-
-        if(!authorById.isPresent()){
-            throw new IllegalArgumentException();
-        }
+        AuthorDto authorById = authorService.getAuthorById(createPostRequest.getAuthor_Id());
 
         Post post = Post.newBuilder()
                 .withTitle(createPostRequest.getTitle())
                 .withContent(createPostRequest.getContent())
-                .withAuthor(authorById.get())
+                .withAuthor(AuthorMapper.fromAuthorDto(authorById))
                 .build();
 
         return PostMapper.fromPost(postRepository.save(post));

@@ -24,12 +24,7 @@ public class AuthorQueryResolver implements GraphQLQueryResolver {
     }
 
     public AuthorDto getAuthorById(UUID id){
-        Optional<Author> authorById = authorService.getAuthorById(id);
-        if(!authorById.isPresent()){
-            return null;
-        }
-
-        return AuthorMapper.fromAuthor(authorById.get());
+        return authorService.getAuthorById(id);
     }
 
 }

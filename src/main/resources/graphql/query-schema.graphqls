@@ -4,4 +4,6 @@ type Query {
     author(name: String!): Author
     recentPosts(page: Int!, count: Int!): [Post]
     authorById(id: ID!): Author
+    scalarTypeExample: Date!
+    graphQLError: String!
 }
