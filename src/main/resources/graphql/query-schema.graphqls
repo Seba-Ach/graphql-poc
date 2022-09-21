@@ -6,4 +6,6 @@ type Query {
     authorById(id: ID!): Author
     scalarTypeExample: Date!
     graphQLError: String!
+    directiveValidationExample(firstName: String! @NotBlank(message: "directiveValidationExample.NotBlank.message"),
+                                lastName: String!@Size(min: 2, max: 15, message: "directiveValidationExample.Size.message")): String!
 }
