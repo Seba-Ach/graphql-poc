@@ -1,10 +1,10 @@
 package com.poc.graphql.resolver.post;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.poc.graphql.dto.PostDto;
 import com.poc.graphql.dto.request.CreatePostRequest;
 import com.poc.graphql.service.PostPublisherService;
 import com.poc.graphql.service.PostService;
+import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,7 +18,7 @@ public class PostMutationResolver implements GraphQLMutationResolver {
         this.postPublisherService = postPublisherService;
     }
 
-    public PostDto createPost(CreatePostRequest createPostRequest){
+    public PostDto createPost(CreatePostRequest createPostRequest) {
         PostDto post = postService.createPost(createPostRequest);
 
         postPublisherService.publish(post);

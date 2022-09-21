@@ -1,6 +1,7 @@
 package com.poc.graphql;
 
-import org.apache.commons.io.IOUtils;
+
+import io.micrometer.core.instrument.util.IOUtils;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;

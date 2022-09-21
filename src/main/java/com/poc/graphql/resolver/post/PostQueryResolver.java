@@ -1,8 +1,8 @@
 package com.poc.graphql.resolver.post;
 
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.poc.graphql.dto.PostDto;
 import com.poc.graphql.service.PostService;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class PostQueryResolver implements GraphQLQueryResolver {
         this.postService = postService;
     }
 
-    public List<PostDto> recentPosts(int page, int count){
+    public List<PostDto> recentPosts(int page, int count) {
         return postService.recentPosts(page, count);
     }
 

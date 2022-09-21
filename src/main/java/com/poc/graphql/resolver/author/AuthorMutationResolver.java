@@ -1,10 +1,10 @@
 package com.poc.graphql.resolver.author;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.poc.graphql.dto.AuthorDto;
 import com.poc.graphql.dto.request.CreateAuthorRequest;
 import com.poc.graphql.mapper.AuthorMapper;
 import com.poc.graphql.service.AuthorService;
+import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,7 +16,7 @@ public class AuthorMutationResolver implements GraphQLMutationResolver {
         this.authorService = authorService;
     }
 
-    public AuthorDto createAuthor(CreateAuthorRequest authorRequest){
+    public AuthorDto createAuthor(CreateAuthorRequest authorRequest) {
         return AuthorMapper.fromAuthor(authorService.createAuthor(authorRequest));
     }
 
