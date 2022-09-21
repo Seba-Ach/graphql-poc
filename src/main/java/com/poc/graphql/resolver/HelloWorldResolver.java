@@ -27,4 +27,8 @@ public class HelloWorldResolver implements GraphQLQueryResolver {
         throw new ResourceNotFound("This is just some exception to show Custom GraphQL Exception Handler");
     }
 
+    public String directiveValidationExample(String firstName, String lastName){
+        return "if you are seeing this then directives validation passed";
+    }
+
 }
